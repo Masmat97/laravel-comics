@@ -12,18 +12,26 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function () {
-    return view('cards');
-});
 
 Route::get('/about', function () {
     return view('about');
 });
 
 Route::get('/', function () {
-    return view('home');
+    $data = [
+        'Card 1: Matteo',
+        'Card 2: Mascio',
+        'Card 3: matteo.mascio@libero.it'
+    ];
+    return view('home', ['cards' => $data]);
 });
 
 Route::get('/home', function () {
-    return view('home');
+    $data = [
+        'Card 1: Matteo',
+        'Card 2: Mascio',
+        'Card 3: matteo.mascio@libero.it'
+    ];
+    return view('home', ['cards' => $data]);
+    
 });
